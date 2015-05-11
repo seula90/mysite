@@ -1,13 +1,5 @@
 package com.sds.icto.mysite.servlet.action.guestbook;
 
-import com.sds.icto.mysite.servlet.action.main.IndexAction;
-import com.sds.icto.mysite.servlet.action.member.JoinAction;
-import com.sds.icto.mysite.servlet.action.member.JoinFormAction;
-import com.sds.icto.mysite.servlet.action.member.JoinSuccessAction;
-import com.sds.icto.mysite.servlet.action.member.LoginAction;
-import com.sds.icto.mysite.servlet.action.member.LoginFormAction;
-import com.sds.icto.mysite.servlet.action.member.LogoutAction;
-import com.sds.icto.mysite.servlet.action.member.UinfoAction;
 import com.sds.icto.web.Action;
 
 public class ActionFactory {
@@ -35,10 +27,12 @@ public class ActionFactory {
 			action = new DeleteFormAction();
 		} else if ("delete".equals(a)){
 			action = new DeleteAction();
+		} else if ("insert".equals(a)){
+			action = new AddAction();
 		}
 		
 		if (action==null){
-			action = new IndexAction();
+			action = new ListAction();
 		}
 				
 		return action;

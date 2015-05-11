@@ -22,7 +22,7 @@
 		</div>
 		<div id="content">
 			<div id="guestbook">
-				<form action="/mysite/guestbook/" method="post">
+				<form action="/mysite/gb" method="post">
 					<input type="hidden" name="a" value="insert">
 					<table>
 						<tr>

@@ -14,7 +14,7 @@ import com.sds.icto.web.Action;
 /**
  * Servlet implementation class MainServlet
  */
-@WebServlet("")
+@WebServlet("/index")
 public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

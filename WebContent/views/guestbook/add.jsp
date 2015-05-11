@@ -14,7 +14,7 @@
 <title>방명록</title>
 </head>
 <body>
-	<form action="/guestbook/gb" method="post">
+	<form action="/gb" method="post">
 	<input type="hidden" name="a" value="insert">
 	<table border=1 width=500>
 		<tr>

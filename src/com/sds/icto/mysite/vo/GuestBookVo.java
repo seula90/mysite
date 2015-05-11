@@ -30,5 +30,6 @@ public class GuestBookVo {
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
+	
 		
 }

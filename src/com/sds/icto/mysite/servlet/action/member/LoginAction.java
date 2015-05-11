@@ -39,7 +39,7 @@ public class LoginAction implements Action {
 		HttpSession session = request.getSession(true);
 		session.setAttribute("authMember",authMember);
 		
-		response.sendRedirect("/mysite/");
+		response.sendRedirect("/mysite/index");
 		
 	}
 

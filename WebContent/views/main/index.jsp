@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="fn"%> 
 <%@ page contentType="text/html;charset=UTF-8" %>
 <!doctype html>
 <html>
@@ -9,12 +12,12 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<jsp:include page="/views/include/header.jsp" flush="false"/>
+			<c:import url="/views/include/header.jsp"/>
 		</div>
 		<div id="wrapper">
 			<div id="content">
 				<div id="site-introduction">
-					<img id="profile" src="https://scontent.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/77115_453842391359449_1437082635_n.jpg?oh=a2cb1e88d37dde718a4695da9a43d00e&oe=55D2C767" width=400 height=300>
+					<img id="profile" src="https://scontent.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/77115_453842391359449_1437082635_n.jpg?oh=a2cb1e88d37dde718a4695da9a43d00e&oe=55D2C767" width=360 height=300>
 					<h2>안녕하세요.<br>  박슬아의  mysite에 오신 것을 환영합니다. </h2>
 					<p>
 						어서오셔용*_*<br>
@@ -27,10 +30,12 @@
 			</div>
 		</div>
 		<div id="navigation">
-			<jsp:include page="/views/include/navigation.jsp"/>
+			<c:import url="/views/include/navigation.jsp">
+			 	<c:param name="type" value="main"/>
+			 </c:import>
 		</div>
 		<div id="footer">
-			<jsp:include page="/views/include/footer.jsp"/>
+			<c:import url="/views/include/footer.jsp"/>
 		</div>
 	</div>
 </body>
