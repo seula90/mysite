@@ -48,12 +48,13 @@
 							<tr>
 								<td><%=vo.getNo()%></td>
 								<td><%=vo.getName()%></td>
-								<td><a href="deleteform.jsp?no=<%=vo.getNo()%>">삭제</a></td>
+								<td><a href="views/guestbook/deleteform.jsp?no=<%=vo.getNo()%>">삭제</a></td>
 							</tr>
 							<tr>
 								<td colspan=4><%=vo.getMsg()%></td>
 							</tr>
-						</table> <%
+						</table>
+						<%
 						}
 						%> 
 						<br>

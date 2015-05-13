@@ -21,9 +21,9 @@ public class ActionFactory {
 	
 	public Action getAction(String a) {
 		Action action = null;
-		if ("list".equals(a)){
+		/*if ("list".equals(a)){
 			action = new ListAction();
-		} else if ("deleteform".equals(a)){
+		} else*/ if ("deleteform".equals(a)){
 			action = new DeleteFormAction();
 		} else if ("delete".equals(a)){
 			action = new DeleteAction();

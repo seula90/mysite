@@ -20,8 +20,8 @@ public class AddAction implements Action {
 			throws SQLException, ClassNotFoundException, ServletException,
 			IOException {
 		String name = request.getParameter("name");
-		String password = request.getParameter("password");
-		String message = request.getParameter("message");
+		String password = request.getParameter("pass");
+		String message = request.getParameter("content");
 		
 		GuestBookVo vo = new GuestBookVo();
 		vo.setName(name);

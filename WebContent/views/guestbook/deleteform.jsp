@@ -1,4 +1,9 @@
+<%@page import="com.sds.icto.mysite.dao.GuestBookDao"%>
+<%@page import="com.sds.icto.mysite.vo.GuestBookVo"%>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<% GuestBookVo vo = new GuestBookVo(); 
+	GuestBookDao dao = new GuestBookDao();
+%>
 <!doctype html>
 <html>
 <head>
@@ -13,14 +18,14 @@
 		</div>
 		<div id="content">
 			<div id="guestbook" class="delete-form">
-				<form method="post" action="/mysite/guestbook">
+				<form method="post" action="/mysite/gb">
 					<input type="hidden" name="a" value="delete">
-					<input type='hidden' name="no" value="${no }">
+					<input type='hidden' name="no" value="<%=request.getParameter("no")%>">
 					<label>비밀번호</label>
 					<input type="password" name="password">
 					<input type="submit" value="확인">
 				</form>
-				<a href="/mysite/guestbook?a=list">방명록 리스트</a>
+				<a href="/mysite/gb?a=list">방명록 리스트</a>
 			</div>
 		</div>
 		<div id="navigation">

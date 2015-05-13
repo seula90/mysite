@@ -17,6 +17,7 @@ public class DeleteAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ClassNotFoundException, ServletException,
 			IOException {
+		
 		Long no = Long.parseLong(request.getParameter("no"));
 		String pwd = request.getParameter("password");
 			
@@ -29,7 +30,7 @@ public class DeleteAction implements Action {
 		GuestBookDao dao = new GuestBookDao();
 		dao.delete(vo);
 		
-		response.sendRedirect("/guestbook2/gb");
+		response.sendRedirect("/mysite/gb");
 
 	}
 

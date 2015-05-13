@@ -30,22 +30,26 @@ public class GuestBookDao {
 
 	public void insert(GuestBookVo vo) throws ClassNotFoundException,
 			SQLException {
+		
+		
 		// 1 connection 생성
 		Connection conn = getConnection();
 
 		// 2 Statement 준비
-		String sql = "insert into GUESTBOOK values(guestbook_seq.nextval, ?,?,?);";
-
+		
+		String sql = "insert into GUESTBOOK values(guestbook_seq.nextval, ?,?,?)";
+		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-
+		
 		// 3 바인딩
 		pstmt.setString(1, vo.getName());
 		pstmt.setString(2, vo.getPwd());
 		pstmt.setString(3, vo.getMsg());
 		
+		
 		// 4 쿼리실행
 		pstmt.executeUpdate();
-
+		
 	}
 
 	
