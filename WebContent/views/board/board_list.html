@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>테이블</title>
+<style type="text/css" media="screen">
+*						{ margin:0; padding:0 }
+body					{ font-family: '맑은 고딕' 돋움; font-size:0.75em; color:#333 }
+
+.div1 {
+	margin: 100px auto;
+	width: 620px;
+	
+}
+.tbl-ex { 
+	margin:100px auto 0 auto;
+	border:1px solid #f00;
+	border-collapse:collapse;
+	border-left-width:0;
+	border-right-width:0;
+}
+
+.tbl-ex th, .tbl-ex td {
+	padding: 8px;
+	border:1px solid #111;
+	border-left-width:0;
+	border-right-width:0;
+} 
+
+.tbl-ex th {
+	background-color: #FFC0C0;
+	font-size: 1.1em;
+	font-color: #fff;
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+	border-top-color: #f00;
+	border-bottom-color: #f00;
+	
+}
+
+.tbl-ex td {
+	border-style: dotted;
+	cursor: pointer;
+}
+
+.tbl-ex tr.even {
+	background-color: #FFF0F0 ;
+}	
+
+.tbl-ex tr:hover {
+	background-color: #fc6;
+}
+input[type='submit']{
+	margin-top : 10px; 
+	float: right;
+}
+
+</style>
+</head>
+<body>
+	<div class="div1">
+	<table class="tbl-ex">
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>글쓴이</th>
+			<th>날짜</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>게시판 목록 테스트입니당 게시판 목록 테스트입니당 게시판 목록 테스트입니당</td>
+			<td>테스트</td>
+			<td>2015.05.13</td>
+		</tr>
+		<tr class="even">
+			<td>1</td>
+			<td>게시판 목록 테스트입니당 게시판 목록 테스트입니당 게시판 목록 테스트입니당</td>
+			<td>테스트</td>
+			<td>2015.05.13</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>게시판 목록 테스트입니당 게시판 목록 테스트입니당 게시판 목록 테스트입니당</td>
+			<td>테스트</td>
+			<td>2015.05.13</td>
+		</tr>
+		<tr class="even">
+			<td>1</td>
+			<td>게시판 목록 테스트입니당 게시판 목록 테스트입니당 게시판 목록 테스트입니당</td>
+			<td>테스트</td>
+			<td>2015.05.13</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>게시판 목록 테스트입니당 게시판 목록 테스트입니당 게시판 목록 테스트입니당</td>
+			<td>테스트</td>
+			<td>2015.05.13</td>
+		</tr>
+		<tr class="even">
+			<td>1</td>
+			<td>게시판 목록 테스트입니당 게시판 목록 테스트입니당 게시판 목록 테스트입니당</td>
+			<td>테스트</td>
+			<td>2015.05.13</td>
+		</tr>	
+	</table>
+	
+	<input type="submit" value="글쓰기">
+	</div>
+	
+</body>
+</html>
