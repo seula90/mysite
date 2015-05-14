@@ -1,4 +1,4 @@
-package com.sds.icto.mysite.servlet.action.guestbook;
+package com.sds.icto.mysite.servlet.action.board;
 
 import com.sds.icto.web.Action;
 
@@ -21,12 +21,15 @@ public class ActionFactory {
 	
 	public Action getAction(String a) {
 		Action action = null;
-		if ("deleteform".equals(a)){
-			action = new DeleteFormAction();
+		
+		if ("insert".equals(a)){
+			action = new InsertAction();
 		} else if ("delete".equals(a)){
 			action = new DeleteAction();
-		} else if ("insert".equals(a)){
-			action = new AddAction();
+		} else if ("edit".equals(a)){
+			action = new EditAction();
+		} else if ("view".equals(a)){
+			action = new ViewAction();
 		}
 		
 		if (action==null){

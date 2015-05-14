@@ -1,4 +1,4 @@
-package com.sds.icto.mysite.servlet.action.guestbook;
+package com.sds.icto.mysite.servlet.action.board;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -10,13 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.sds.icto.web.Action;
 import com.sds.icto.web.WebUtil;
 
-public class ListAction implements Action {
+public class IndexAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ClassNotFoundException, ServletException,
 			IOException {
-		WebUtil.forward("/views/guestbook/list.jsp", request, response);
+		
+			WebUtil.forward("/views/guestbook/list.jsp", request, response);
 
 	}
 
