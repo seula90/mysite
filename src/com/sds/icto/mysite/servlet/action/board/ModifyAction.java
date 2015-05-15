@@ -12,15 +12,14 @@ import com.sds.icto.mysite.vo.BoardVo;
 import com.sds.icto.web.Action;
 import com.sds.icto.web.WebUtil;
 
-public class ViewAction implements Action {
+public class ModifyAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ClassNotFoundException, ServletException,
 			IOException {
-		
 		Long no = Long.parseLong(request.getParameter("no"));
-					
+		
 		BoardVo vo = new BoardVo();
 		
 		vo.setNo(no);
@@ -31,8 +30,7 @@ public class ViewAction implements Action {
 		
 		request.setAttribute("vo", vo1);
 				
-		WebUtil.forward("/views/board/view.jsp",request,response);
-		
+		WebUtil.forward("/views/board/modify.jsp", request, response);
 
 	}
 

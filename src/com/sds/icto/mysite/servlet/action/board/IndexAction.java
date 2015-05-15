@@ -17,7 +17,8 @@ public class IndexAction implements Action {
 			throws SQLException, ClassNotFoundException, ServletException,
 			IOException {
 		
-			WebUtil.forward("/views/guestbook/list.jsp", request, response);
+			
+			WebUtil.forward("/views/board/list.jsp", request, response);
 
 	}
 

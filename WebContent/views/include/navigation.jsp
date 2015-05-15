@@ -5,5 +5,5 @@
 <ul>
 	<li class="selected">박슬아</li>
 	<li><a href="/mysite/gb">방명록</a></li>
-	<li><a href="">게시판</a></li>
-</ul>
+	<li><a href="/mysite/bd">게시판</a></li>
+</ul> 

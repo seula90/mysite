@@ -22,12 +22,12 @@ public class ActionFactory {
 	public Action getAction(String a) {
 		Action action = null;
 		
-		if ("insert".equals(a)){
-			action = new InsertAction();
+		if ("write".equals(a)){
+			action = new WriteAction();
 		} else if ("delete".equals(a)){
 			action = new DeleteAction();
-		} else if ("edit".equals(a)){
-			action = new EditAction();
+		} else if ("modify".equals(a)){
+			action = new ModifyAction();
 		} else if ("view".equals(a)){
 			action = new ViewAction();
 		}
