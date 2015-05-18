@@ -2,6 +2,7 @@ package com.sds.icto.mysite.servlet.action.board;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -12,31 +13,22 @@ import com.sds.icto.mysite.vo.BoardVo;
 import com.sds.icto.web.Action;
 import com.sds.icto.web.WebUtil;
 
-public class ViewAction implements Action {
+public class FindAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ClassNotFoundException, ServletException,
 			IOException {
 		
-		Long no = Long.parseLong(request.getParameter("no"));
+		String kwd = request.getParameter("kwd");
 		
-		
-		BoardVo vo = new BoardVo();
-		
-		vo.setNo(no);
-					
-		BoardDao dao = new BoardDao();
-		dao.UpdateViewcnt(vo);	
-		
-		BoardVo vo1= new BoardVo(); 
-		vo1=dao.View(vo);
-		
-		request.setAttribute("vo", vo1);
 				
-		WebUtil.forward("/views/board/view.jsp",request,response);
-		
+		BoardDao dao = new BoardDao();
+		List<BoardVo> list = dao.findList(kwd);
 
+		request.setAttribute("list", list);
+
+		WebUtil.forward("/views/board/list.jsp", request, response);
 	}
 
 }

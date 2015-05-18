@@ -4,9 +4,7 @@
 <%@page import="com.sds.icto.mysite.vo.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%-- <% 
-	MemberVo authMember = (MemberVo)session.getAttribute("authMember");
-%> --%>
+
 <!doctype html>
 <html>
 <head>

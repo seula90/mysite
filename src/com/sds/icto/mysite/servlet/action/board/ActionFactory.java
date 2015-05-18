@@ -34,6 +34,8 @@ public class ActionFactory {
 			action = new UpdateAction();
 		} else if ("view".equals(a)){
 			action = new ViewAction();
+		} else if ("find".equals(a)){
+			action = new FindAction();
 		}
 		
 		if (action==null){

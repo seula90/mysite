@@ -4,10 +4,6 @@
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<%
-	GuestBookDao dao = new GuestBookDao();
-	List<GuestBookVo> list = dao.fetchList();
-%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

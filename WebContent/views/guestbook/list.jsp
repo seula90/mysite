@@ -1,12 +1,10 @@
 <%@page import="com.sds.icto.mysite.vo.GuestBookVo"%>
 <%@page import="com.sds.icto.mysite.dao.GuestBookDao"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page import="java.util.*"%>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ page import="java.util.List"%>
-<%
-	GuestBookDao dao = new GuestBookDao();
-	List<GuestBookVo> list = dao.fetchList();
-%>
+
 <!doctype html>
 <html>
 <head>
@@ -41,22 +39,18 @@
 				</form>
 				<ul>
 					<li>
-						<%
-							for (GuestBookVo vo : list) {
-						%>
+					<c:forEach items="${list }" var="vo">
 						<table width=510 border=1>
 							<tr>
-								<td><%=vo.getNo()%></td>
-								<td><%=vo.getName()%></td>
-								<td><a href="views/guestbook/deleteform.jsp?no=<%=vo.getNo()%>">삭제</a></td>
+								<td>${vo.no }</td>
+								<td>${vo.name }</td>
+								<td><a href="views/guestbook/deleteform.jsp?no=${vo.no }">삭제</a></td>
 							</tr>
 							<tr>
-								<td colspan=4><%=vo.getMsg()%></td>
+								<td colspan=4>${vo.msg }</td>
 							</tr>
 						</table>
-						<%
-						}
-						%> 
+						</c:forEach>
 						<br>
 					</li>
 				</ul>

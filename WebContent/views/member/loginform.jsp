@@ -2,8 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="fn"%> 
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%-- <%
-	String result = request.getParameter("result");%> --%>
 
 <!doctype html>
 <html>

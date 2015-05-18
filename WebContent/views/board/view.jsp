@@ -36,7 +36,9 @@
 				</table>
 				<div class="bottom">
 					<a href="/mysite/bd">글목록</a> 
+					<c:if test="${authMember.no==vo.memberno}">
 					<a href="/mysite/bd?a=modify&no=${vo.no }&memberno=${authMember.no}">글수정</a>
+					</c:if>
 				</div>
 			</div>
 		</div>

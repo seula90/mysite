@@ -2,10 +2,7 @@
 <%@page import="com.sds.icto.mysite.dao.BoardDao"%>
 <%@page import="com.sds.icto.mysite.vo.BoardVo"%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<% BoardVo vo = new BoardVo(); 
-BoardDao dao = new BoardDao();
-MemberVo authMember = (MemberVo)session.getAttribute("authMember");
-%>
+
 <!doctype html>
 <html>
 <head>
@@ -22,8 +19,8 @@ MemberVo authMember = (MemberVo)session.getAttribute("authMember");
 			<div id="guestbook" class="delete-form">
 				<form method="post" action="/mysite/bd">
 					<input type="hidden" name="a" value="delete">
-					<input type='hidden' name="no" value="<%=request.getParameter("no")%>">
-					<input type='hidden' name="memberno" value="<%=authMember.getNo()%>">
+					<input type="hidden" name="no" value="${param.no}">
+					<input type="hidden" name="memberno" value="${authMember.no }">
 					<label>정말로 삭제하시겠습니까?    </label>
 					
 					<input type="submit" value="YES">
