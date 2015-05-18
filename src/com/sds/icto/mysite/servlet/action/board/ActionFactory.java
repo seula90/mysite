@@ -24,10 +24,14 @@ public class ActionFactory {
 		
 		if ("write".equals(a)){
 			action = new WriteAction();
+		} else if("deleteform".equals(a)){
+			action = new DeleteFormAction();
 		} else if ("delete".equals(a)){
 			action = new DeleteAction();
 		} else if ("modify".equals(a)){
 			action = new ModifyAction();
+		} else if ("update".equals(a)){
+			action = new UpdateAction();
 		} else if ("view".equals(a)){
 			action = new ViewAction();
 		}

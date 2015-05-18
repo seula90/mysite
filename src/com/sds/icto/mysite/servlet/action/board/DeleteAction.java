@@ -7,7 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sds.icto.mysite.dao.BoardDao;
 import com.sds.icto.mysite.dao.GuestBookDao;
+import com.sds.icto.mysite.vo.BoardVo;
 import com.sds.icto.mysite.vo.GuestBookVo;
 import com.sds.icto.web.Action;
 
@@ -18,19 +20,20 @@ public class DeleteAction implements Action {
 			throws SQLException, ClassNotFoundException, ServletException,
 			IOException {
 		
+		System.out.println(request.getParameter("memberno"));
 		Long no = Long.parseLong(request.getParameter("no"));
-		String pwd = request.getParameter("password");
+		Long memberno = Long.parseLong(request.getParameter("memberno"));
 			
-		GuestBookVo vo = new GuestBookVo();
+		BoardVo vo = new BoardVo();
 		
 		vo.setNo(no);
-		vo.setPwd(pwd);
+		vo.setMemberno(memberno);
 			
 		
-		GuestBookDao dao = new GuestBookDao();
+		BoardDao dao = new BoardDao();
 		dao.delete(vo);
 		
-		response.sendRedirect("/mysite/gb");
+		response.sendRedirect("/mysite/bd");
 
 	}
 

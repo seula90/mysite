@@ -1,5 +1,7 @@
+<%@page import="com.sds.icto.mysite.vo.MemberVo"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,13 +16,15 @@
 		</div>
 		<div id="content">
 			<div id="board">
-				<form class="board-form" method="post" action="/mysite/bd">
+				<form class="board-form" method="post" action="/mysite/bd?a=update&no=${vo.no }">
+				<input type="hidden" name="memberno" value="${authMember.no }">
 					<table class="tbl-ex">
 						<tr>
 							<th colspan="2">글수정</th>
 						</tr>
 						<tr>
 							<td class="label">제목</td>
+							
 							<td><input type="text" name="title" value="${vo.title }"></td>
 						</tr>
 						<tr>
@@ -31,7 +35,7 @@
 						</tr>
 					</table>
 					<div class="bottom">
-						<a href="/mysite/views/board/view.jsp">취소</a>
+						<a href="/mysite/bd?a=view&no=${vo.no }">취소</a>
 						<input type="submit" value="수정">
 					</div>
 				</form>				

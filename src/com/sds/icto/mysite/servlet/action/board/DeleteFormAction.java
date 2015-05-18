@@ -16,7 +16,7 @@ public class DeleteFormAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ClassNotFoundException, ServletException,
 			IOException {
-		WebUtil.forward("/views/guestbook/deleteform.jsp", request, response);
+		WebUtil.forward("/views/board/deleteform.jsp", request, response);
 
 	}
 

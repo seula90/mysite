@@ -53,7 +53,7 @@ public class BoardDao {
 
 		Connection conn = getConnection();
 
-		String sql = "delete from board where NO=? and Memberno=?";
+		String sql = "delete from board where NO=? and Member_no=?";
 
 		// statement 생성
 		PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -73,8 +73,46 @@ public class BoardDao {
 
 	}
 
+	public void Update(BoardVo vo) throws ClassNotFoundException, SQLException {
+
+		Connection conn = getConnection();
+
+		String sql = "update board set title=?, content=? where NO=? and Member_no=?";
+
+		// statement 생성
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+
+		pstmt.setString(1, vo.getTitle());
+		pstmt.setString(2, vo.getContent());
+		pstmt.setLong(3, vo.getNo());
+		pstmt.setLong(4, vo.getMemberno());
+
+		pstmt.executeUpdate();
+
+		
+		try {
+			
+			if (pstmt != null) {
+				pstmt.close();
+			}
+
+			if (conn != null) {
+				conn.close();
+			}
+		} catch (SQLException ex) {
+		}
+		// 자원정리
+
+		/*
+		 * try { if (pstmt != null) { pstmt.close(); }
+		 * 
+		 * if (conn != null) { conn.close(); } } catch (SQLException ex) { }
+		 */
+
+	}
+
 	public BoardVo View(BoardVo vo) throws ClassNotFoundException, SQLException {
-				
+
 		Connection conn = getConnection();
 
 		String sql = "select * from board where no=?";
@@ -83,39 +121,50 @@ public class BoardDao {
 
 		// 4 SQL문 실행
 		pstmt.setLong(1, vo.getNo());
-		
-		
+
 		pstmt.executeQuery();
-		
-		
+
 		ResultSet rs = pstmt.executeQuery();
 		rs.next();
 		// 5 결과 처리
-		
-		
-			Long no = rs.getLong(1);
-			String title = rs.getString(2);
-			String content = rs.getString(3);
-			//Long memberno = rs.getLong(4);
-			String membername = rs.getString(5);
-			Long viewcnt = rs.getLong(6);
-			String date = rs.getString(7);
-			
-			BoardVo vo2 = new BoardVo();
-			vo2.setNo(no);
-			vo2.setTitle(title);
-			vo2.setContent(content);
-			//vo2.setMemberno(memberno);
-			vo2.setMembername(membername);
-			vo2.setViewcnt(viewcnt);
-			vo2.setDate(date);
-			
-			return vo2;
 
+		Long no = rs.getLong(1);
+		String title = rs.getString(2);
+		String content = rs.getString(3);
+		// Long memberno = rs.getLong(4);
+		String membername = rs.getString(5);
+		Long viewcnt = rs.getLong(6);
+		String date = rs.getString(7);
+
+		BoardVo vo2 = new BoardVo();
+		vo2.setNo(no);
+		vo2.setTitle(title);
+		vo2.setContent(content);
+		// vo2.setMemberno(memberno);
+		vo2.setMembername(membername);
+		vo2.setViewcnt(viewcnt);
+		vo2.setDate(date);
+		
+		try {
+			if (rs != null) {
+				rs.close();
+			}
+			if (pstmt != null) {
+				pstmt.close();
+			}
+
+			if (conn != null) {
+				conn.close();
+			}
+		} catch (SQLException ex) {
 		}
-		
-	public BoardVo update(BoardVo vo) throws ClassNotFoundException, SQLException {
-		
+		return vo2;
+
+	}
+
+	/*public BoardVo update(BoardVo vo) throws ClassNotFoundException,
+			SQLException {
+
 		Connection conn = getConnection();
 
 		String sql = "select * from board where no=?";
@@ -124,37 +173,47 @@ public class BoardDao {
 
 		// 4 SQL문 실행
 		pstmt.setLong(1, vo.getNo());
-		
-		
+
 		pstmt.executeQuery();
-		
-		
+
 		ResultSet rs = pstmt.executeQuery();
 		rs.next();
 		// 5 결과 처리
-		
-		
-			Long no = rs.getLong(1);
-			String title = rs.getString(2);
-			String content = rs.getString(3);
-			//Long memberno = rs.getLong(4);
-			String membername = rs.getString(5);
-			Long viewcnt = rs.getLong(6);
-			String date = rs.getString(7);
-			
-			BoardVo vo2 = new BoardVo();
-			vo2.setNo(no);
-			vo2.setTitle(title);
-			vo2.setContent(content);
-			//vo2.setMemberno(memberno);
-			vo2.setMembername(membername);
-			vo2.setViewcnt(viewcnt);
-			vo2.setDate(date);
-			
-			return vo2;
 
+		Long no = rs.getLong(1);
+		String title = rs.getString(2);
+		String content = rs.getString(3);
+		// Long memberno = rs.getLong(4);
+		String membername = rs.getString(5);
+		Long viewcnt = rs.getLong(6);
+		String date = rs.getString(7);
+
+		BoardVo vo2 = new BoardVo();
+		vo2.setNo(no);
+		vo2.setTitle(title);
+		vo2.setContent(content);
+		// vo2.setMemberno(memberno);
+		vo2.setMembername(membername);
+		vo2.setViewcnt(viewcnt);
+		vo2.setDate(date);
+
+		try {
+			if (rs != null) {
+				rs.close();
+			}
+			if (pstmt != null) {
+				pstmt.close();
+			}
+
+			if (conn != null) {
+				conn.close();
+			}
+		} catch (SQLException ex) {
 		}
-	
+		
+		return vo2;
+
+	}*/
 
 	public List<BoardVo> fetchList() throws ClassNotFoundException,
 			SQLException {
@@ -192,6 +251,21 @@ public class BoardDao {
 			list.add(vo);
 
 		}
+
+		try {
+			if (rs != null) {
+				rs.close();
+			}
+			if (stmt != null) {
+				stmt.close();
+			}
+
+			if (conn != null) {
+				conn.close();
+			}
+		} catch (SQLException ex) {
+		}
+
 		return list;
 	}
 

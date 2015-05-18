@@ -44,7 +44,7 @@
 						%>			
 					<tr>
 						<td><%=vo.getNo() %></td>
-						<td><a href="/mysite/bd?a=view&no=<%=vo.getNo() %>&memberno=<%=vo.getMemberno()%>"><%=vo.getTitle() %></a></td>
+						<td><a href="/mysite/bd?a=view&no=<%=vo.getNo() %>"><%=vo.getTitle() %></a></td>
 						<td><%=vo.getMembername() %></td>
 						<td><%=vo.getViewcnt() %></td>
 						<td><%=vo.getDate() %></td>

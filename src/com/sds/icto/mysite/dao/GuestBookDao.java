@@ -37,7 +37,7 @@ public class GuestBookDao {
 
 		// 2 Statement 준비
 		
-		String sql = "insert into GUESTBOOK values(guestbook_seq.nextval, ?,?,?)";
+		String sql = "insert into GUESTBOOK values(guestbook_seq.nextval, ?,?,?, sysdate)";
 		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
